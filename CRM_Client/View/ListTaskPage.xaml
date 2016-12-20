@@ -1,0 +1,39 @@
+﻿<Page x:Class="CRM_Client.View.ListTaskPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Список задач" Loaded="Page_Loaded">
+
+    <GroupBox Header="Задачи" Width="700" Margin="0,-30,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.95" Background="{DynamicResource Gradient_Amber}" BorderBrush="Transparent">
+        <Grid Margin="-5,-6,-5,-6" Background="#E2E5EA">
+            <DataGrid Name="dgTask" AutoGenerateColumns="False" Height="380" Margin="15" Padding="15" IsReadOnly="True" ColumnWidth="*" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" MouseDoubleClick="dgTask_MouseDoubleClick" KeyUp="dgTask_KeyUp">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding PostPeople.Name}" Header="Должность"/>
+                    <DataGridTextColumn Header="Получатель">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat=" {0} {1} {2}">
+                                <Binding Path="Staff.FirstName"/>
+                                <Binding Path="Staff.LastName"/>
+                                <Binding Path="Staff.Patronymic"/>
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Отправитель">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat=" {0} {1} {2}">
+                                <Binding Path="Staff1.FirstName"/>
+                                <Binding Path="Staff1.LastName"/>
+                                <Binding Path="Staff1.Patronymic"/>
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding ConditionTask.Name}" Header="Состояние"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Controls:ProgressRing Name="prLoadData" IsActive="True"/>
+        </Grid>
+    </GroupBox>
+</Page>

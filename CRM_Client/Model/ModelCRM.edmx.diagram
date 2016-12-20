@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9460556b864c4fb298391545f4b27c35" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseCRMModel.Area" Width="1.5" PointX="1.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.CardClient" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.City" Width="1.5" PointX="1.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.ConditionDeal" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.ConditionTask" Width="1.5" PointX="11.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.Country" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.Deal" Width="1.5" PointX="8.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.EmailPeople" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.EmailStaff" Width="1.5" PointX="11.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.Goods" Width="1.5" PointX="11.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.GoodsInDeal" Width="1.5" PointX="10.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.People" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.PhonePeople" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.PhoneStaff" Width="1.5" PointX="11.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.PostPeople" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.Reminder" Width="1.5" PointX="13.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.Staff" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.TaskBD" Width="1.5" PointX="13.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.TypeEmail" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.TypeGoods" Width="1.5" PointX="9" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCRMModel.TypePhone" Width="1.5" PointX="6" PointY="21.625" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseCRMModel.Area_Country_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.City_Area_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.CardClient_City_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.People_CardClient_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_Client_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Client_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Staff_City_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Deal_Condition_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Condition_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Deal_People_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Deal_Staff_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.GoodsInDeal_Deal_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_Deal_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Deal_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.EmailPeople_People_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.EmailPeople_TypeEmail_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.EmailStaff_Staff_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.EmailStaff_TypeEmail_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Goods_TypeGoods_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.GoodsInDeal_Goods_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_Goods_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Goods_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.People_Post_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.PhonePeople_People_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_People_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_People_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.PhonePeople_TypePhone_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.PhoneStaff_Staff_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.PhoneStaff_TypePhone_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_Post_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Staff_Post_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Post_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_Staff_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.Reminder_StaffSender_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_Staff_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCRMModel.TaskBD_StaffSender_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

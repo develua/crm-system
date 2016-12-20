@@ -1,0 +1,252 @@
+/* Страна, область, город */
+
+CREATE TABLE Country
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(30) not null
+)
+
+CREATE TABLE Area
+(
+	ID int not null primary key identity(1,1),
+	ID_Country int not null,
+	Name nvarchar(30) not null,
+	Constraint Area_Country_FK foreign key (ID_Country) References Country (ID)
+)
+
+CREATE TABLE City
+(
+	ID int not null primary key identity(1,1),
+	ID_Area int not null,
+	Name nvarchar(30) not null,
+	Constraint City_Area_FK foreign key (ID_Area) References Area (ID)
+)
+
+/* Должности */
+
+CREATE TABLE PostPeople
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(30) not null
+)
+
+/* Сотруднии */
+
+CREATE TABLE Staff
+(
+	ID int not null primary key identity(1,1),
+	ID_Post int not null,
+	Login nvarchar(20) not null,
+	Password nvarchar(32) not null,
+	FirstName nvarchar(20) not null,
+	LastName nvarchar(20)not null,
+	Patronymic nvarchar(20),
+	Birthday datetime,
+	ID_City int,
+	Address nvarchar(50),
+	Constraint Staff_Post_FK foreign key (ID_Post) References PostPeople (ID),
+	Constraint Staff_City_FK foreign key (ID_City) References City (ID)
+)
+
+/* Тип Email адреса */
+
+CREATE TABLE TypeEmail
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(20) not null
+)
+
+/* Email сотрудника */
+
+CREATE TABLE EmailStaff
+(
+	ID int not null primary key identity(1,1),
+	ID_Staff int not null,
+	Email nvarchar(40) not null,
+	ID_TypeEmail int not null,
+	Constraint EmailStaff_Staff_FK foreign key (ID_Staff) References Staff (ID),
+	Constraint EmailStaff_TypeEmail_FK foreign key (ID_TypeEmail) References TypeEmail (ID)
+)
+
+/* Тип телефона */
+
+CREATE TABLE TypePhone
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(20) not null
+)
+
+/* Телефоны сотрудника */
+
+CREATE TABLE PhoneStaff
+(
+	ID int not null primary key identity(1,1),
+	ID_Staff int not null,
+	Phone nvarchar(20) not null,
+	ID_TypePhone int not null,
+	Constraint PhoneStaff_Staff_FK foreign key (ID_Staff) References Staff (ID),
+	Constraint PhoneStaff_TypePhone_FK foreign key (ID_TypePhone) References TypePhone (ID)
+)
+
+/* Клиент */
+
+CREATE TABLE CardClient
+(
+	ID int not null primary key identity(1,1),
+	NameCompany nvarchar(30),
+	ID_City int,
+	Address nvarchar(50),
+	CreateCard datetime not null,
+	Constraint CardClient_City_FK foreign key (ID_City) References City (ID)
+)
+
+/* Люди в карточке клиента */
+
+CREATE TABLE People
+(
+	ID int not null primary key identity(1,1),
+	ID_CardClient int not null,
+	ID_Post int,
+	FirstName nvarchar(20) not null,
+	LastName nvarchar(20),
+	Patronymic nvarchar(20),
+	Birthday datetime,
+	Constraint People_CardClient_FK foreign key (ID_CardClient) References CardClient (ID),
+	Constraint People_Post_FK foreign key (ID_Post) References PostPeople (ID)
+)
+
+/* Email человека */
+
+CREATE TABLE EmailPeople
+(
+	ID int not null primary key identity(1,1),
+	ID_People int not null,
+	Email nvarchar(40) not null,
+	ID_TypeEmail int not null,
+	Constraint EmailPeople_People_FK foreign key (ID_People) References People (ID),
+	Constraint EmailPeople_TypeEmail_FK foreign key (ID_TypeEmail) References TypeEmail (ID)
+)
+
+/* Телефоны человека */
+
+CREATE TABLE PhonePeople
+(
+	ID int not null primary key identity(1,1),
+	ID_People int not null,
+	Phone nvarchar(20) not null,
+	ID_TypePhone int not null,
+	Constraint PhonePeople_People_FK foreign key (ID_People) References People (ID),
+	Constraint PhonePeople_TypePhone_FK foreign key (ID_TypePhone) References TypePhone (ID)
+)
+
+/* Тип товара */
+
+CREATE TABLE TypeGoods
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(30) not null
+)
+
+/* Товар */
+
+CREATE TABLE Goods
+(
+	ID int not null primary key identity(1,1),
+	ID_TypeGoods int not null,
+	Name nvarchar(50) not null,
+	Price money not null,
+	CountUnits int not null,
+	Constraint Goods_TypeGoods_FK foreign key (ID_TypeGoods) References TypeGoods (ID)
+)
+
+/* Состояние сделки */
+
+CREATE TABLE ConditionDeal
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(20) not null
+)
+
+/* Сделки */
+
+CREATE TABLE Deal
+(
+	ID int not null primary key identity(1,1),
+	ID_Condition int not null,
+	ID_People int not null,
+	ID_Staff int not null,
+	Price money not null,
+	Paid money not null,
+	DateDeal datetime not null,
+	DatePaid datetime,
+	Constraint Deal_Condition_FK foreign key (ID_Condition) References ConditionDeal (ID),
+	Constraint Deal_People_FK foreign key (ID_People) References People (ID),
+	Constraint Deal_Staff_FK foreign key (ID_Staff) References Staff (ID)
+)
+
+/* Товары в сделке */
+
+CREATE TABLE GoodsInDeal
+(
+	ID int not null primary key identity(1,1),
+	ID_Deal int not null,
+	ID_Goods int not null,
+	CountUnits int not null,
+	Constraint GoodsInDeal_Deal_FK foreign key (ID_Deal) References Deal (ID),
+	Constraint GoodsInDeal_Goods_FK foreign key (ID_Goods) References Goods (ID)
+)
+
+/* Напоминание */
+
+CREATE TABLE Reminder
+(
+	ID int not null primary key identity(1,1),
+	ID_Post int not null,
+	ID_Staff int,
+	ID_StaffSender int not null,
+	ID_Client int,
+	ID_People int,
+	ID_Deal int,
+	ID_Goods int,
+	DateEvent datetime not null,
+	Description text not null,
+	Constraint Reminder_Post_FK foreign key (ID_Post) References PostPeople (ID),
+	Constraint Reminder_Staff_FK foreign key (ID_Staff) References Staff (ID),
+	Constraint Reminder_StaffSender_FK foreign key (ID_StaffSender) References Staff (ID),
+	Constraint Reminder_Client_FK foreign key (ID_Client) References CardClient (ID),
+	Constraint Reminder_People_FK foreign key (ID_People) References People (ID),
+	Constraint Reminder_Deal_FK foreign key (ID_Deal) References Deal (ID),
+	Constraint Reminder_Goods_FK foreign key (ID_Goods) References Goods (ID)
+)
+
+/* Состояние задач */
+
+CREATE TABLE ConditionTask
+(
+	ID int not null primary key identity(1,1),
+	Name nvarchar(20) not null
+)
+
+/* Задачи */
+
+CREATE TABLE TaskBD
+(
+	ID int not null primary key identity(1,1),
+	ID_Post int not null,
+	ID_Staff int,
+	ID_StaffSender int not null,
+	ID_Client int,
+	ID_People int,
+	ID_Deal int,
+	ID_Goods int,
+	ID_Condition int not null,
+	Description text not null,
+	Constraint TaskBD_Post_FK foreign key (ID_Post) References PostPeople (ID),
+	Constraint TaskBD_Staff_FK foreign key (ID_Staff) References Staff (ID),
+	Constraint TaskBD_StaffSender_FK foreign key (ID_StaffSender) References Staff (ID),
+	Constraint TaskBD_Client_FK foreign key (ID_Client) References CardClient (ID),
+	Constraint TaskBD_People_FK foreign key (ID_People) References People (ID),
+	Constraint TaskBD_Deal_FK foreign key (ID_Deal) References Deal (ID),
+	Constraint TaskBD_Goods_FK foreign key (ID_Goods) References Goods (ID),
+	Constraint TaskBD_Condition_FK foreign key (ID_Condition) References ConditionTask (ID)
+)

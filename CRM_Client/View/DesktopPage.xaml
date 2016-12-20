@@ -1,0 +1,106 @@
+﻿<Page x:Class="CRM_Client.View.DesktopPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Рабочий стол">
+
+    <Grid Margin="0,-50,0,0">
+        <WrapPanel Width="394" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Controls:Tile Title="Задачи" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Green}" Click="Tile_Task_Click">
+                <Image Source="../Images/task.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Клиенты" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Teal}" Click="Tile_Client_Click">
+                <Image Source="../Images/client.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Сотрудники" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Cyan}" Click="Tile_Staff_Click">
+                <Image Source="../Images/staff.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Аналитика" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Magenta}" Click="Tile_Analytics_Click">
+                <Image Source="../Images/analytics.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Сделки" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Orange}" Click="Tile_Deal_Click">
+                <Image Source="../Images/deal.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Настойки" Width="125" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Crimson}" Click="Tile_Setting_Click">
+                <Image Source="../Images/setting.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Товар/Услуги" Width="191" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Violet}" Click="Tile_Goods_Click">
+                <Image Source="../Images/goods.png" Width="48" Height="48"/>
+            </Controls:Tile>
+
+            <Controls:Tile Title="Напоминания" Width="191" Height="125" Opacity="0.95" Count="" FontFamily="Calibri Light" Background="{DynamicResource Gradient_Indigo}" Click="Tile_Reminder_Click">
+                <Image Source="../Images/reminder.png" Width="48" Height="48"/>
+            </Controls:Tile>
+        </WrapPanel>
+
+        <Controls:Flyout Name="flyoutTask" Header="Задачи" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Left" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Получить задачу" Tag="ReceiveTaskPage"/>
+                <ListBoxItem Content="Список задач" Tag="ListTaskPage"/>
+                <ListBoxItem Content="Добавить задачу" Tag="TaskPage"/>
+                <ListBoxItem Content="Список состояний задачи" Tag="Directory_StatucTask"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutClient" Header="Клиенты" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Left" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список клиентов" Tag="ListClientPage"/>
+                <ListBoxItem Content="Добавить клиента" Tag="ClientPage"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutStaff" Header="Сотрудники" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Right" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список сотрудников" Tag="ListStaffPage"/>
+                <ListBoxItem Content="Добавить сотрудника" Tag="StaffPage"/>
+                <ListBoxItem Content="Список должностей" Tag="Directory_PostPeople"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutAnalytics" Header="Аналитика" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Left" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Аналитика по клиентам" Tag="AnalyticsClientPage"/>
+                <ListBoxItem Content="Аналитика по сотрудникам" Tag="AnalyticsStaffPage"/>
+                <ListBoxItem Content="Аналитика по сделкам" Tag="AnalyticsDealPage"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutDeal" Header="Сделки" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Right" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список сделок" Tag="ListDealPage"/>
+                <ListBoxItem Content="Добавить сделку" Tag="DealPage"/>
+                <ListBoxItem Content="Список состояний сделки" Tag="Directory_StatusDeal"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutSettings" Header="Настройки" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Right" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список видов телефонов " Tag="Directory_TypePhone"/>
+                <ListBoxItem Content="Список видов email" Tag="Directory_TypeEmail"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutGoods" Header="Товар/Услуги" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Left" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список товаров/услуг" Tag="ListGoodsPage"/>
+                <ListBoxItem Content="Добавить товар/услугу" Tag="GoodsPage"/>
+                <ListBoxItem Content="Список видов товаров/услуг" Tag="Directory_TypeGoods"/>
+            </ListBox>
+        </Controls:Flyout>
+
+        <Controls:Flyout Name="flyoutReminder" Header="Напоминания" Opacity="0.95" CloseButtonVisibility="Collapsed" Theme="Dark" Position="Right" Width="200" Height="388" MouseLeave="Flyout_Close_MouseLeave">
+            <ListBox Background="Transparent" Margin="15,5" SelectionChanged="Flyout_ListBox_SelectionChanged">
+                <ListBoxItem Content="Список напоминаний" Tag="ListReminderPage"/>
+                <ListBoxItem Content="Добавить напоминание" Tag="ReminderPage"/>
+            </ListBox>
+        </Controls:Flyout>
+    </Grid>
+</Page>

@@ -1,0 +1,173 @@
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe.config
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.exe
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.pdb
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\CRM_Client.pdb
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.dll
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\System.Windows.Interactivity.dll
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.xml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.csprojResolveAssemblyReference.cache
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ClientPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\DealPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\MainWindow.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ReceiveTaskPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\SettingsPermissionsPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\SettingsPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\StaffPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\TaskPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\App.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ClientPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\DealPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\MainWindow.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ReceiveTaskPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\SettingsPermissionsPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\SettingsPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\StaffPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\TaskPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\App.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client_MarkupCompile.cache
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.g.resources
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.Properties.Resources.resources
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\CRM_Client.csproj.GenerateResource.Cache
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.baml
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.g.cs
+d:\Profiles\06951\Desktop\Курсовая\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe.config
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\DatabaseCRM.mdf
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\DatabaseCRM_log.ldf
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\CRM_Client.pdb
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\EntityFramework.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\EntityFramework.xml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.xml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ClientPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DealPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DirectoryPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\MainWindow.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\StaffPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\TaskPage.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\App.baml
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ClientPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DealPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\DirectoryPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\MainWindow.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\StaffPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\View\TaskPage.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\App.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client_Content.g.cs
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client_MarkupCompile.cache
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.g.resources
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.Properties.Resources.resources
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.csproj.GenerateResource.Cache
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.exe
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Client\obj\Debug\CRM_Client.pdb
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\DatabaseCRM.mdf
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\DatabaseCRM_log.ldf
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe.config
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\CRM_Client.exe
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\CRM_Client.pdb
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\EntityFramework.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\EntityFramework.SqlServer.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\System.Windows.Interactivity.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\EntityFramework.xml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\EntityFramework.SqlServer.xml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\bin\Debug\MahApps.Metro.xml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.csprojResolveAssemblyReference.cache
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ClientPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DealPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DirectoryPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\MainWindow.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\StaffPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\TaskPage.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\App.baml
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsClientPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsDealPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\AnalyticsStaffPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ClientPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DealPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DesktopPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\DirectoryPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\GoodsPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListClientPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListDealPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListGoodsPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListReminderPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListStaffPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ListTaskPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\MainWindow.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\ReminderPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\StaffPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\View\TaskPage.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\App.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client_Content.g.cs
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client_MarkupCompile.cache
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.g.resources
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.Properties.Resources.resources
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.csproj.GenerateResource.Cache
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.exe
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Client\obj\Debug\CRM_Client.pdb

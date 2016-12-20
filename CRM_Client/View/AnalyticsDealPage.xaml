@@ -1,0 +1,36 @@
+﻿<Page x:Class="CRM_Client.View.AnalyticsDealPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Аналитика по сделкам" Loaded="Page_Loaded">
+
+    <Grid Margin="0,0,0,50" Opacity="0.95">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Width="700" MinHeight="450" Header="Аналитика сделок" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="7" Background="{DynamicResource Gradient_Indigo}" BorderBrush="Transparent">
+            <Grid Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <chart:RadialGaugeChart ChartTitle="Состояния сделок" ChartSubTitle="Процентное соотношение состояний сделок" Margin="7">
+                    <chart:RadialGaugeChart.Series>
+                        <chart:ChartSeries Name="cbStateDeal" SeriesTitle=" " DisplayMember="Name" ValueMember="Value" />
+                    </chart:RadialGaugeChart.Series>
+                </chart:RadialGaugeChart>
+
+                <StackPanel Orientation="Horizontal" Height="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="40,43">
+                    <TextBlock Grid.Column="1" Text="За периуд:" VerticalAlignment="Center" Margin="7,0"/>
+                    <DatePicker Name="dpFromDate" Grid.Column="2" Width="110" SelectedDateChanged="dpDate_SelectedDateChanged"/>
+                    <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" Margin="7,0"/>
+                    <DatePicker Name="dpToDate" Grid.Column="3" Width="110" SelectedDateChanged="dpDate_SelectedDateChanged"/>
+                </StackPanel>
+
+                <Controls:ProgressRing Name="prLoadData" IsActive="True"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Page>

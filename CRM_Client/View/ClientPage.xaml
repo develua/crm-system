@@ -1,0 +1,221 @@
+﻿<Page x:Class="CRM_Client.View.ClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      Title="Карточка клиента" Loaded="Page_Loaded">
+
+    <Grid Name="gMain" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="false" Opacity="0.95">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Header="Общая информация" Width="350" Background="{DynamicResource Gradient_Orange}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <Grid Name="gGeneralInfo" Margin="15,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="180"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,0" VerticalAlignment="Center">
+                        Имя: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="3" Text="{Binding FirstName}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия:" Margin="5,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Text="{Binding LastName}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Отчество:" Margin="5,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Text="{Binding Patronymic}"/>
+
+                    <TextBlock Name="tbPost" Grid.Row="3" Grid.Column="0" Text="Должность:" Margin="5,0" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <ComboBox Name="cbPost" Grid.Row="3" Grid.Column="1" Margin="3" Visibility="Collapsed" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding ID_Post}"/>
+                    
+                    <TextBlock Grid.Row="4" Text="Дата рождения:" Margin="5,0" VerticalAlignment="Center"/>
+                    <DatePicker Grid.Row="4" Grid.Column="1" Margin="3" SelectedDate="{Binding Birthday}"/>
+
+                    <TextBlock Grid.Row="5" Margin="5,0" VerticalAlignment="Center">
+                        Карточка создана: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <DatePicker Name="dpCreateCard" Grid.Row="5" Grid.Column="1" Margin="3" SelectedDate="{Binding CreateCard}"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Header="Контакная информация" Width="350" Background="{DynamicResource Gradient_Amber}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <Grid Name="gContactInfo" Margin="15,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="180"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="tbNewNameCompany" Grid.Row="0" Grid.Column="0" Text="Название компании:" Margin="5,0" Visibility="Collapsed" VerticalAlignment="Center"/>
+                    <TextBox Name="tbNewCompany" Grid.Row="0" Grid.Column="1" Margin="3" Visibility="Collapsed" Text="{Binding NameCompany}"/>
+
+                    <TextBlock Name="tbNameCompany" Grid.Row="1" Grid.Column="0" Text="Закреплено за:" Margin="5,0" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <ComboBox Name="cbCompany" Grid.Row="1" Grid.Column="1" Margin="3" Visibility="Collapsed" DisplayMemberPath="NameCompany" SelectedValuePath="ID" SelectedValue="{Binding ID, Mode=OneWay}" SelectionChanged="cbCompany_SelectionChanged"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Страна:" Margin="5,0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbCountry" Grid.Row="2" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding City.Area.ID_Country, Mode=OneWay}" SelectionChanged="cbCountry_SelectionChanged"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Область:" Margin="5,0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbArea" Grid.Row="3" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding City.ID_Area, Mode=OneWay}" SelectionChanged="cbArea_SelectionChanged"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Город:" Margin="5,0" VerticalAlignment="Center"/>
+                    <ComboBox Name="cbCity" Grid.Row="4" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding ID_City, Mode=OneWay}"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Адрес:" Margin="5,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="3" Text="{Binding Address}"/>
+
+                    <CheckBox Name="cbEntity" Grid.Row="6" Grid.Column="1" Margin="3" Content="Юридическое лицо" IsThreeState="False" Checked="cbEntity_Checked" Unchecked="cbEntity_Unchecked"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Width="350" Header="Список телефонов" Background="{DynamicResource Gradient_Crimson}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <DataGrid Name="dgPhone" Margin="15" AutoGenerateColumns="False" ColumnWidth="*" Height="100" Padding="15" CanUserAddRows="False" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" HeadersVisibility="None" HorizontalScrollBarVisibility="Hidden" KeyUp="dgPhone_KeyUp">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Phone}"/>
+                        <DataGridComboBoxColumn x:Name="dgcbTypePhone" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValueBinding="{Binding ID_TypePhone}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Name="gNewPhone" Margin="12,0,12,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Text="{Binding Phone}" Margin="3"/>
+                    <ComboBox Name="cbTypePhone" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding ID_TypePhone}"/>
+
+                    <Button Name="btnAddNewPhone" Grid.Column="2" Width="26" Height="24" Margin="3" Padding="0" HorizontalAlignment="Right" Background="{DynamicResource Gradient_Crimson}" Foreground="White" Click="btnAddNewPhone_Click">
+                        <Image Source="../Images/plus.png" Width="24" Height="24"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Width="350" Header="Список Email адресов" Background="{DynamicResource Gradient_Magenta}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <DataGrid Name="dgEmail" Margin="15" AutoGenerateColumns="False" ColumnWidth="*" Height="100" Padding="15" CanUserAddRows="False" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" HeadersVisibility="None" HorizontalScrollBarVisibility="Hidden" KeyUp="dgEmail_KeyUp">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Email}"/>
+                        <DataGridComboBoxColumn x:Name="dgcbTypeEmail" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValueBinding="{Binding ID_TypeEmail}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Name="gNewEmail" Margin="12,0,12,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Name="tbNewEmail" Text="{Binding Email}" Margin="3"/>
+                    <ComboBox Name="cbTypeEmail" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding ID_TypeEmail}"/>
+
+                    <Button Name="btnAddNewEmail" Grid.Column="2" Width="26" Height="24" Margin="3" Padding="0" HorizontalAlignment="Right" Background="{DynamicResource Gradient_Magenta}" Foreground="White" Click="btnAddNewEmail_Click">
+                        <Image Source="../Images/plus.png" Width="24" Height="24"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <Expander Name="ePeopleCompany" Grid.Row="2" Grid.ColumnSpan="2" Header="Сотрудники компании" Width="715" Margin="7" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.95" Background="{DynamicResource Gradient_Cobalt}" BorderBrush="Transparent">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <DataGrid Name="dgPeople" AutoGenerateColumns="False" Height="250" Margin="15" Padding="15" IsReadOnly="True" ColumnWidth="*" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" MouseDoubleClick="dgClient_MouseDoubleClick" KeyUp="dgClient_KeyUp">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding FirstName}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество"/>
+                        <DataGridTextColumn Binding="{Binding PostPeople.Name}" Header="Должность"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Expander>
+
+        <Expander Name="eHistoryDeal" Grid.Row="3" Grid.ColumnSpan="2" Width="715" Header="История сделок" Visibility="Collapsed" Background="{DynamicResource Gradient_Indigo}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <DataGrid Name="dgDeal" AutoGenerateColumns="False" Height="250" Margin="15" Padding="15" IsReadOnly="True" ColumnWidth="*" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" MouseDoubleClick="dgDeal_MouseDoubleClick" KeyUp="dgDeal_KeyUp">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Сотрудник" Width="200">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}{0} {1} {2}">
+                                    <Binding Path="Staff.FirstName"/>
+                                    <Binding Path="Staff.LastName"/>
+                                    <Binding Path="Staff.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Price}" Header="Сумма"/>
+                        <DataGridTextColumn Binding="{Binding Paid}" Header="Оплачено"/>
+                        <DataGridTextColumn Binding="{Binding ConditionDeal.Name}" Header="Состояние"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Expander>
+        
+        <Expander Name="eHistoryTask" Grid.Row="4" Grid.ColumnSpan="2" Width="715" Header="История задач" Visibility="Collapsed" Background="{DynamicResource Gradient_Violet}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <DataGrid Name="dgTask" AutoGenerateColumns="False" Height="250" Margin="15" Padding="15" IsReadOnly="True" ColumnWidth="*" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" MouseDoubleClick="dgTask_MouseDoubleClick" KeyUp="dgTask_KeyUp">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding PostPeople.Name}" Header="Должность"/>
+                        <DataGridTextColumn Header="Получатель">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat=" {0} {1} {2}">
+                                    <Binding Path="Staff.FirstName"/>
+                                    <Binding Path="Staff.LastName"/>
+                                    <Binding Path="Staff.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Отправитель">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat=" {0} {1} {2}">
+                                    <Binding Path="Staff1.FirstName"/>
+                                    <Binding Path="Staff1.LastName"/>
+                                    <Binding Path="Staff1.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding ConditionTask.Name}" Header="Состояние"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Expander>
+
+        <Button Name="btnSaveData" Grid.Row="5" Grid.Column="1" Width="100" Margin="7,7,7,50" Content="Сохранить" HorizontalAlignment="Right" Background="{DynamicResource Gradient_Magenta}" Foreground="White" Click="bntSaveClient_Click"/>
+
+    </Grid>
+</Page>

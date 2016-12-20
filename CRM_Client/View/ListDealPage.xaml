@@ -1,0 +1,31 @@
+﻿<Page x:Class="CRM_Client.View.ListDealPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Список сделок" Loaded="Page_Loaded">
+
+    <GroupBox Header="Сделки" Width="700" Margin="0,-30,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.95" Background="{DynamicResource Gradient_Pink}" BorderBrush="Transparent">
+        <Grid Margin="-5,-6,-5,-6" Background="#E2E5EA">
+            <DataGrid Name="dgDeal" AutoGenerateColumns="False" Height="380" Margin="15" Padding="15" IsReadOnly="True" ColumnWidth="*" CanUserDeleteRows="True" CanUserResizeColumns="False" SelectionMode="Single" MouseDoubleClick="dgDeal_MouseDoubleClick" KeyUp="dgDeal_KeyUp">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Сотрудник" Width="200">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat="{}{0} {1} {2}">
+                                <Binding Path="Staff.FirstName"/>
+                                <Binding Path="Staff.LastName"/>
+                                <Binding Path="Staff.Patronymic"/>
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Price}" Header="Сумма"/>
+                    <DataGridTextColumn Binding="{Binding Paid}" Header="Оплачено"/>
+                    <DataGridTextColumn Binding="{Binding ConditionDeal.Name}" Header="Состояние"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Controls:ProgressRing Name="prLoadData" IsActive="True"/>
+        </Grid>
+    </GroupBox>
+</Page>

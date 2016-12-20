@@ -1,0 +1,15 @@
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\bin\Debug\CRM_Service.dll.config
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\bin\Debug\CRM_Service.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\bin\Debug\CRM_Service.pdb
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\obj\Debug\CRM_Service.dll
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\obj\Debug\CRM_Service.pdb
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\bin\Debug\DatabaseCRM.mdf
+C:\Users\Игорь\documents\visual studio 2013\Projects\CRM_System\CRM_Service\bin\Debug\DatabaseCRM_log.ldf
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\bin\Debug\DatabaseCRM.mdf
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\bin\Debug\DatabaseCRM_log.ldf
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\bin\Debug\CRM_Service.dll.config
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\bin\Debug\CRM_Service.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\bin\Debug\CRM_Service.pdb
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\obj\Debug\CRM_Service.csprojResolveAssemblyReference.cache
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\obj\Debug\CRM_Service.dll
+D:\Документы\Учеба\Работы\Разное\CRM_System\CRM_Service\obj\Debug\CRM_Service.pdb

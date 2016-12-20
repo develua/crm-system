@@ -1,0 +1,55 @@
+﻿<Page x:Class="CRM_Client.View.GoodsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Карточка товара/слуги" Loaded="Page_Loaded">
+
+    <Grid Name="mainGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-50,0,0" IsEnabled="False" Opacity="0.95">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Добавление товара/услуги" Width="350" Background="{DynamicResource Gradient_Green}" BorderBrush="Transparent" Margin="7">
+            <StackPanel Margin="-5,-6,-5,-6" Background="#E2E5EA">
+                <Grid Margin="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="180"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,0" VerticalAlignment="Center">
+                        Вид товара/услуги: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <ComboBox Name="cbTypeGoods" Grid.Row="0" Grid.Column="1" Margin="3" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding ID_TypeGoods}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5,0" VerticalAlignment="Center">
+                        Название: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <TextBox Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Margin="3"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0" VerticalAlignment="Center">
+                        Цена: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <TextBox Text="{Binding Price}" Grid.Row="2" Grid.Column="1" Margin="3"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5,0" VerticalAlignment="Center">
+                        Количество: <Run Foreground="{StaticResource Gradient_Red}">*</Run>
+                    </TextBlock>
+                    <Controls:NumericUpDown Value="{Binding CountUnits}" Grid.Row="3" Grid.Column="1" Margin="3" TextAlignment="Left" Minimum="0"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <Button Name="btnSeveGoods" Grid.Row="1" Width="100" Margin="7" Content="Сохранить" HorizontalAlignment="Right" Background="{DynamicResource Gradient_Green}" Foreground="White" Click="btnSeveGoods_Click"/>
+        
+    </Grid>
+</Page>

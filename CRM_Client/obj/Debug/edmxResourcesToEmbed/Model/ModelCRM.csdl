@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Country" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.Area_Country_FK" FromRole="Area" ToRole="Country" />
+    <NavigationProperty Name="City" Relationship="Self.City_Area_FK" FromRole="Area" ToRole="City" />
+  </EntityType>
+  <EntityType Name="CardClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameCompany" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ID_City" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateCard" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="City" Relationship="Self.CardClient_City_FK" FromRole="CardClient" ToRole="City" />
+    <NavigationProperty Name="People" Relationship="Self.People_CardClient_FK" FromRole="CardClient" ToRole="People" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_Client_FK" FromRole="CardClient" ToRole="Reminder" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Client_FK" FromRole="CardClient" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Area" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="Self.City_Area_FK" FromRole="City" ToRole="Area" />
+    <NavigationProperty Name="CardClient" Relationship="Self.CardClient_City_FK" FromRole="City" ToRole="CardClient" />
+    <NavigationProperty Name="Staff" Relationship="Self.Staff_City_FK" FromRole="City" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="ConditionDeal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Deal" Relationship="Self.Deal_Condition_FK" FromRole="ConditionDeal" ToRole="Deal" />
+  </EntityType>
+  <EntityType Name="ConditionTask">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Condition_FK" FromRole="ConditionTask" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="Self.Area_Country_FK" FromRole="Country" ToRole="Area" />
+  </EntityType>
+  <EntityType Name="Deal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Condition" Type="Int32" Nullable="false" />
+    <Property Name="ID_People" Type="Int32" Nullable="false" />
+    <Property Name="ID_Staff" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DateDeal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DatePaid" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ConditionDeal" Relationship="Self.Deal_Condition_FK" FromRole="Deal" ToRole="ConditionDeal" />
+    <NavigationProperty Name="People" Relationship="Self.Deal_People_FK" FromRole="Deal" ToRole="People" />
+    <NavigationProperty Name="Staff" Relationship="Self.Deal_Staff_FK" FromRole="Deal" ToRole="Staff" />
+    <NavigationProperty Name="GoodsInDeal" Relationship="Self.GoodsInDeal_Deal_FK" FromRole="Deal" ToRole="GoodsInDeal" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_Deal_FK" FromRole="Deal" ToRole="Reminder" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Deal_FK" FromRole="Deal" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="EmailPeople">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_People" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_TypeEmail" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="People" Relationship="Self.EmailPeople_People_FK" FromRole="EmailPeople" ToRole="People" />
+    <NavigationProperty Name="TypeEmail" Relationship="Self.EmailPeople_TypeEmail_FK" FromRole="EmailPeople" ToRole="TypeEmail" />
+  </EntityType>
+  <EntityType Name="EmailStaff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Staff" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_TypeEmail" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.EmailStaff_Staff_FK" FromRole="EmailStaff" ToRole="Staff" />
+    <NavigationProperty Name="TypeEmail" Relationship="Self.EmailStaff_TypeEmail_FK" FromRole="EmailStaff" ToRole="TypeEmail" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TypeGoods" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CountUnits" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TypeGoods" Relationship="Self.Goods_TypeGoods_FK" FromRole="Goods" ToRole="TypeGoods" />
+    <NavigationProperty Name="GoodsInDeal" Relationship="Self.GoodsInDeal_Goods_FK" FromRole="Goods" ToRole="GoodsInDeal" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_Goods_FK" FromRole="Goods" ToRole="Reminder" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Goods_FK" FromRole="Goods" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="GoodsInDeal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Deal" Type="Int32" Nullable="false" />
+    <Property Name="ID_Goods" Type="Int32" Nullable="false" />
+    <Property Name="CountUnits" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Deal" Relationship="Self.GoodsInDeal_Deal_FK" FromRole="GoodsInDeal" ToRole="Deal" />
+    <NavigationProperty Name="Goods" Relationship="Self.GoodsInDeal_Goods_FK" FromRole="GoodsInDeal" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CardClient" Type="Int32" Nullable="false" />
+    <Property Name="ID_Post" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CardClient" Relationship="Self.People_CardClient_FK" FromRole="People" ToRole="CardClient" />
+    <NavigationProperty Name="Deal" Relationship="Self.Deal_People_FK" FromRole="People" ToRole="Deal" />
+    <NavigationProperty Name="EmailPeople" Relationship="Self.EmailPeople_People_FK" FromRole="People" ToRole="EmailPeople" />
+    <NavigationProperty Name="PostPeople" Relationship="Self.People_Post_FK" FromRole="People" ToRole="PostPeople" />
+    <NavigationProperty Name="PhonePeople" Relationship="Self.PhonePeople_People_FK" FromRole="People" ToRole="PhonePeople" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_People_FK" FromRole="People" ToRole="Reminder" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_People_FK" FromRole="People" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="PhonePeople">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_People" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_TypePhone" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="People" Relationship="Self.PhonePeople_People_FK" FromRole="PhonePeople" ToRole="People" />
+    <NavigationProperty Name="TypePhone" Relationship="Self.PhonePeople_TypePhone_FK" FromRole="PhonePeople" ToRole="TypePhone" />
+  </EntityType>
+  <EntityType Name="PhoneStaff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Staff" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_TypePhone" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.PhoneStaff_Staff_FK" FromRole="PhoneStaff" ToRole="Staff" />
+    <NavigationProperty Name="TypePhone" Relationship="Self.PhoneStaff_TypePhone_FK" FromRole="PhoneStaff" ToRole="TypePhone" />
+  </EntityType>
+  <EntityType Name="PostPeople">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="People" Relationship="Self.People_Post_FK" FromRole="PostPeople" ToRole="People" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_Post_FK" FromRole="PostPeople" ToRole="Reminder" />
+    <NavigationProperty Name="Staff" Relationship="Self.Staff_Post_FK" FromRole="PostPeople" ToRole="Staff" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Post_FK" FromRole="PostPeople" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="Reminder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Post" Type="Int32" Nullable="false" />
+    <Property Name="ID_Staff" Type="Int32" />
+    <Property Name="ID_StaffSender" Type="Int32" Nullable="false" />
+    <Property Name="ID_Client" Type="Int32" />
+    <Property Name="ID_People" Type="Int32" />
+    <Property Name="ID_Deal" Type="Int32" />
+    <Property Name="ID_Goods" Type="Int32" />
+    <Property Name="DateEvent" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CardClient" Relationship="Self.Reminder_Client_FK" FromRole="Reminder" ToRole="CardClient" />
+    <NavigationProperty Name="Deal" Relationship="Self.Reminder_Deal_FK" FromRole="Reminder" ToRole="Deal" />
+    <NavigationProperty Name="Goods" Relationship="Self.Reminder_Goods_FK" FromRole="Reminder" ToRole="Goods" />
+    <NavigationProperty Name="People" Relationship="Self.Reminder_People_FK" FromRole="Reminder" ToRole="People" />
+    <NavigationProperty Name="PostPeople" Relationship="Self.Reminder_Post_FK" FromRole="Reminder" ToRole="PostPeople" />
+    <NavigationProperty Name="Staff" Relationship="Self.Reminder_Staff_FK" FromRole="Reminder" ToRole="Staff" />
+    <NavigationProperty Name="Staff1" Relationship="Self.Reminder_StaffSender_FK" FromRole="Reminder" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Post" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="ID_City" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City" Relationship="Self.Staff_City_FK" FromRole="Staff" ToRole="City" />
+    <NavigationProperty Name="Deal" Relationship="Self.Deal_Staff_FK" FromRole="Staff" ToRole="Deal" />
+    <NavigationProperty Name="EmailStaff" Relationship="Self.EmailStaff_Staff_FK" FromRole="Staff" ToRole="EmailStaff" />
+    <NavigationProperty Name="PhoneStaff" Relationship="Self.PhoneStaff_Staff_FK" FromRole="Staff" ToRole="PhoneStaff" />
+    <NavigationProperty Name="PostPeople" Relationship="Self.Staff_Post_FK" FromRole="Staff" ToRole="PostPeople" />
+    <NavigationProperty Name="Reminder" Relationship="Self.Reminder_Staff_FK" FromRole="Staff" ToRole="Reminder" />
+    <NavigationProperty Name="Reminder1" Relationship="Self.Reminder_StaffSender_FK" FromRole="Staff" ToRole="Reminder" />
+    <NavigationProperty Name="TaskBD" Relationship="Self.TaskBD_Staff_FK" FromRole="Staff" ToRole="TaskBD" />
+    <NavigationProperty Name="TaskBD1" Relationship="Self.TaskBD_StaffSender_FK" FromRole="Staff" ToRole="TaskBD" />
+  </EntityType>
+  <EntityType Name="TaskBD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Post" Type="Int32" Nullable="false" />
+    <Property Name="ID_Staff" Type="Int32" />
+    <Property Name="ID_StaffSender" Type="Int32" Nullable="false" />
+    <Property Name="ID_Client" Type="Int32" />
+    <Property Name="ID_People" Type="Int32" />
+    <Property Name="ID_Deal" Type="Int32" />
+    <Property Name="ID_Goods" Type="Int32" />
+    <Property Name="ID_Condition" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CardClient" Relationship="Self.TaskBD_Client_FK" FromRole="TaskBD" ToRole="CardClient" />
+    <NavigationProperty Name="ConditionTask" Relationship="Self.TaskBD_Condition_FK" FromRole="TaskBD" ToRole="ConditionTask" />
+    <NavigationProperty Name="Deal" Relationship="Self.TaskBD_Deal_FK" FromRole="TaskBD" ToRole="Deal" />
+    <NavigationProperty Name="Goods" Relationship="Self.TaskBD_Goods_FK" FromRole="TaskBD" ToRole="Goods" />
+    <NavigationProperty Name="People" Relationship="Self.TaskBD_People_FK" FromRole="TaskBD" ToRole="People" />
+    <NavigationProperty Name="PostPeople" Relationship="Self.TaskBD_Post_FK" FromRole="TaskBD" ToRole="PostPeople" />
+    <NavigationProperty Name="Staff" Relationship="Self.TaskBD_Staff_FK" FromRole="TaskBD" ToRole="Staff" />
+    <NavigationProperty Name="Staff1" Relationship="Self.TaskBD_StaffSender_FK" FromRole="TaskBD" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="TypeEmail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EmailPeople" Relationship="Self.EmailPeople_TypeEmail_FK" FromRole="TypeEmail" ToRole="EmailPeople" />
+    <NavigationProperty Name="EmailStaff" Relationship="Self.EmailStaff_TypeEmail_FK" FromRole="TypeEmail" ToRole="EmailStaff" />
+  </EntityType>
+  <EntityType Name="TypeGoods">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.Goods_TypeGoods_FK" FromRole="TypeGoods" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="TypePhone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PhonePeople" Relationship="Self.PhonePeople_TypePhone_FK" FromRole="TypePhone" ToRole="PhonePeople" />
+    <NavigationProperty Name="PhoneStaff" Relationship="Self.PhoneStaff_TypePhone_FK" FromRole="TypePhone" ToRole="PhoneStaff" />
+  </EntityType>
+  <Association Name="Area_Country_FK">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Area" Type="Self.Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="ID_Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="City_Area_FK">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="ID_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CardClient_City_FK">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="CardClient" Type="Self.CardClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CardClient">
+        <PropertyRef Name="ID_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="People_CardClient_FK">
+    <End Role="CardClient" Type="Self.CardClient" Multiplicity="1" />
+    <End Role="People" Type="Self.People" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardClient">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="People">
+        <PropertyRef Name="ID_CardClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_Client_FK">
+    <End Role="CardClient" Type="Self.CardClient" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardClient">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Client_FK">
+    <End Role="CardClient" Type="Self.CardClient" Multiplicity="0..1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardClient">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Staff_City_FK">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="ID_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Deal_Condition_FK">
+    <End Role="ConditionDeal" Type="Self.ConditionDeal" Multiplicity="1" />
+    <End Role="Deal" Type="Self.Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConditionDeal">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deal">
+        <PropertyRef Name="ID_Condition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Condition_FK">
+    <End Role="ConditionTask" Type="Self.ConditionTask" Multiplicity="1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConditionTask">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Condition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Deal_People_FK">
+    <End Role="People" Type="Self.People" Multiplicity="1" />
+    <End Role="Deal" Type="Self.Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deal">
+        <PropertyRef Name="ID_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Deal_Staff_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Deal" Type="Self.Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Deal">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GoodsInDeal_Deal_FK">
+    <End Role="Deal" Type="Self.Deal" Multiplicity="1" />
+    <End Role="GoodsInDeal" Type="Self.GoodsInDeal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deal">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GoodsInDeal">
+        <PropertyRef Name="ID_Deal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_Deal_FK">
+    <End Role="Deal" Type="Self.Deal" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deal">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_Deal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Deal_FK">
+    <End Role="Deal" Type="Self.Deal" Multiplicity="0..1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deal">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Deal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailPeople_People_FK">
+    <End Role="People" Type="Self.People" Multiplicity="1" />
+    <End Role="EmailPeople" Type="Self.EmailPeople" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmailPeople">
+        <PropertyRef Name="ID_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailPeople_TypeEmail_FK">
+    <End Role="TypeEmail" Type="Self.TypeEmail" Multiplicity="1" />
+    <End Role="EmailPeople" Type="Self.EmailPeople" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEmail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmailPeople">
+        <PropertyRef Name="ID_TypeEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailStaff_Staff_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="EmailStaff" Type="Self.EmailStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmailStaff">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailStaff_TypeEmail_FK">
+    <End Role="TypeEmail" Type="Self.TypeEmail" Multiplicity="1" />
+    <End Role="EmailStaff" Type="Self.EmailStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEmail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmailStaff">
+        <PropertyRef Name="ID_TypeEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Goods_TypeGoods_FK">
+    <End Role="TypeGoods" Type="Self.TypeGoods" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="ID_TypeGoods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GoodsInDeal_Goods_FK">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="GoodsInDeal" Type="Self.GoodsInDeal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GoodsInDeal">
+        <PropertyRef Name="ID_Goods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_Goods_FK">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_Goods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Goods_FK">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Goods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="People_Post_FK">
+    <End Role="PostPeople" Type="Self.PostPeople" Multiplicity="0..1" />
+    <End Role="People" Type="Self.People" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostPeople">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="People">
+        <PropertyRef Name="ID_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhonePeople_People_FK">
+    <End Role="People" Type="Self.People" Multiplicity="1" />
+    <End Role="PhonePeople" Type="Self.PhonePeople" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhonePeople">
+        <PropertyRef Name="ID_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_People_FK">
+    <End Role="People" Type="Self.People" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_People_FK">
+    <End Role="People" Type="Self.People" Multiplicity="0..1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhonePeople_TypePhone_FK">
+    <End Role="TypePhone" Type="Self.TypePhone" Multiplicity="1" />
+    <End Role="PhonePeople" Type="Self.PhonePeople" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePhone">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhonePeople">
+        <PropertyRef Name="ID_TypePhone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhoneStaff_Staff_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="PhoneStaff" Type="Self.PhoneStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhoneStaff">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhoneStaff_TypePhone_FK">
+    <End Role="TypePhone" Type="Self.TypePhone" Multiplicity="1" />
+    <End Role="PhoneStaff" Type="Self.PhoneStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePhone">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhoneStaff">
+        <PropertyRef Name="ID_TypePhone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_Post_FK">
+    <End Role="PostPeople" Type="Self.PostPeople" Multiplicity="1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostPeople">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Staff_Post_FK">
+    <End Role="PostPeople" Type="Self.PostPeople" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostPeople">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="ID_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Post_FK">
+    <End Role="PostPeople" Type="Self.PostPeople" Multiplicity="1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostPeople">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_Staff_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reminder_StaffSender_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="ID_StaffSender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_Staff_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskBD_StaffSender_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="TaskBD" Type="Self.TaskBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskBD">
+        <PropertyRef Name="ID_StaffSender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseCRMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Area" EntityType="Self.Area" />
+    <EntitySet Name="CardClient" EntityType="Self.CardClient" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="ConditionDeal" EntityType="Self.ConditionDeal" />
+    <EntitySet Name="ConditionTask" EntityType="Self.ConditionTask" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Deal" EntityType="Self.Deal" />
+    <EntitySet Name="EmailPeople" EntityType="Self.EmailPeople" />
+    <EntitySet Name="EmailStaff" EntityType="Self.EmailStaff" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="GoodsInDeal" EntityType="Self.GoodsInDeal" />
+    <EntitySet Name="People" EntityType="Self.People" />
+    <EntitySet Name="PhonePeople" EntityType="Self.PhonePeople" />
+    <EntitySet Name="PhoneStaff" EntityType="Self.PhoneStaff" />
+    <EntitySet Name="PostPeople" EntityType="Self.PostPeople" />
+    <EntitySet Name="Reminder" EntityType="Self.Reminder" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="TaskBD" EntityType="Self.TaskBD" />
+    <EntitySet Name="TypeEmail" EntityType="Self.TypeEmail" />
+    <EntitySet Name="TypeGoods" EntityType="Self.TypeGoods" />
+    <EntitySet Name="TypePhone" EntityType="Self.TypePhone" />
+    <AssociationSet Name="Area_Country_FK" Association="Self.Area_Country_FK">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Area" EntitySet="Area" />
+    </AssociationSet>
+    <AssociationSet Name="City_Area_FK" Association="Self.City_Area_FK">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="CardClient_City_FK" Association="Self.CardClient_City_FK">
+      <End Role="City" EntitySet="City" />
+      <End Role="CardClient" EntitySet="CardClient" />
+    </AssociationSet>
+    <AssociationSet Name="People_CardClient_FK" Association="Self.People_CardClient_FK">
+      <End Role="CardClient" EntitySet="CardClient" />
+      <End Role="People" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_Client_FK" Association="Self.Reminder_Client_FK">
+      <End Role="CardClient" EntitySet="CardClient" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Client_FK" Association="Self.TaskBD_Client_FK">
+      <End Role="CardClient" EntitySet="CardClient" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="Staff_City_FK" Association="Self.Staff_City_FK">
+      <End Role="City" EntitySet="City" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="Deal_Condition_FK" Association="Self.Deal_Condition_FK">
+      <End Role="ConditionDeal" EntitySet="ConditionDeal" />
+      <End Role="Deal" EntitySet="Deal" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Condition_FK" Association="Self.TaskBD_Condition_FK">
+      <End Role="ConditionTask" EntitySet="ConditionTask" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="Deal_People_FK" Association="Self.Deal_People_FK">
+      <End Role="People" EntitySet="People" />
+      <End Role="Deal" EntitySet="Deal" />
+    </AssociationSet>
+    <AssociationSet Name="Deal_Staff_FK" Association="Self.Deal_Staff_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Deal" EntitySet="Deal" />
+    </AssociationSet>
+    <AssociationSet Name="GoodsInDeal_Deal_FK" Association="Self.GoodsInDeal_Deal_FK">
+      <End Role="Deal" EntitySet="Deal" />
+      <End Role="GoodsInDeal" EntitySet="GoodsInDeal" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_Deal_FK" Association="Self.Reminder_Deal_FK">
+      <End Role="Deal" EntitySet="Deal" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Deal_FK" Association="Self.TaskBD_Deal_FK">
+      <End Role="Deal" EntitySet="Deal" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="EmailPeople_People_FK" Association="Self.EmailPeople_People_FK">
+      <End Role="People" EntitySet="People" />
+      <End Role="EmailPeople" EntitySet="EmailPeople" />
+    </AssociationSet>
+    <AssociationSet Name="EmailPeople_TypeEmail_FK" Association="Self.EmailPeople_TypeEmail_FK">
+      <End Role="TypeEmail" EntitySet="TypeEmail" />
+      <End Role="EmailPeople" EntitySet="EmailPeople" />
+    </AssociationSet>
+    <AssociationSet Name="EmailStaff_Staff_FK" Association="Self.EmailStaff_Staff_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="EmailStaff" EntitySet="EmailStaff" />
+    </AssociationSet>
+    <AssociationSet Name="EmailStaff_TypeEmail_FK" Association="Self.EmailStaff_TypeEmail_FK">
+      <End Role="TypeEmail" EntitySet="TypeEmail" />
+      <End Role="EmailStaff" EntitySet="EmailStaff" />
+    </AssociationSet>
+    <AssociationSet Name="Goods_TypeGoods_FK" Association="Self.Goods_TypeGoods_FK">
+      <End Role="TypeGoods" EntitySet="TypeGoods" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="GoodsInDeal_Goods_FK" Association="Self.GoodsInDeal_Goods_FK">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="GoodsInDeal" EntitySet="GoodsInDeal" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_Goods_FK" Association="Self.Reminder_Goods_FK">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Goods_FK" Association="Self.TaskBD_Goods_FK">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="People_Post_FK" Association="Self.People_Post_FK">
+      <End Role="PostPeople" EntitySet="PostPeople" />
+      <End Role="People" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="PhonePeople_People_FK" Association="Self.PhonePeople_People_FK">
+      <End Role="People" EntitySet="People" />
+      <End Role="PhonePeople" EntitySet="PhonePeople" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_People_FK" Association="Self.Reminder_People_FK">
+      <End Role="People" EntitySet="People" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_People_FK" Association="Self.TaskBD_People_FK">
+      <End Role="People" EntitySet="People" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="PhonePeople_TypePhone_FK" Association="Self.PhonePeople_TypePhone_FK">
+      <End Role="TypePhone" EntitySet="TypePhone" />
+      <End Role="PhonePeople" EntitySet="PhonePeople" />
+    </AssociationSet>
+    <AssociationSet Name="PhoneStaff_Staff_FK" Association="Self.PhoneStaff_Staff_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="PhoneStaff" EntitySet="PhoneStaff" />
+    </AssociationSet>
+    <AssociationSet Name="PhoneStaff_TypePhone_FK" Association="Self.PhoneStaff_TypePhone_FK">
+      <End Role="TypePhone" EntitySet="TypePhone" />
+      <End Role="PhoneStaff" EntitySet="PhoneStaff" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_Post_FK" Association="Self.Reminder_Post_FK">
+      <End Role="PostPeople" EntitySet="PostPeople" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="Staff_Post_FK" Association="Self.Staff_Post_FK">
+      <End Role="PostPeople" EntitySet="PostPeople" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Post_FK" Association="Self.TaskBD_Post_FK">
+      <End Role="PostPeople" EntitySet="PostPeople" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_Staff_FK" Association="Self.Reminder_Staff_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="Reminder_StaffSender_FK" Association="Self.Reminder_StaffSender_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_Staff_FK" Association="Self.TaskBD_Staff_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <AssociationSet Name="TaskBD_StaffSender_FK" Association="Self.TaskBD_StaffSender_FK">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="TaskBD" EntitySet="TaskBD" />
+    </AssociationSet>
+    <FunctionImport Name="Top5CustomersSummaDeal" ReturnType="Collection(DatabaseCRMModel.Top5CustomersSummaDeal_Result)">
+      <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Top5CustomersSummaDeal_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="62" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="19" />
+  </ComplexType>
+</Schema>

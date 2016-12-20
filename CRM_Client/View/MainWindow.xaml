@@ -1,0 +1,32 @@
+﻿<Controls:MetroWindow x:Class="CRM_Client.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="CRM System" Width="900" Height="700" MinWidth="900" MinHeight="700" MaxWidth="1000" MaxHeight="800" WindowStartupLocation="CenterScreen" Loaded="MetroWindow_Loaded" EnableDWMDropShadow="True">
+    
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="../Images/bg_image.jpg"/>
+    </Controls:MetroWindow.Background>
+    
+    <Controls:TransitioningContentControl Name="transitioning">
+        <ScrollViewer Name="scrollMain" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="btnBack" Content="Назад" FontSize="11" Width="50" Height="50" Margin="10" BorderBrush="{DynamicResource Gradient_Stell}" BorderThickness="1" HorizontalAlignment="Left" Style="{DynamicResource MetroCircleButtonStyle}" Click="Button_Back_Click"/>
+
+                <TextBlock Name="tbTitlePage" Grid.Column="1" FontSize="24" Margin="-80,0,0,0" FontFamily="Segoe UI Light" Foreground="#333333" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Frame Grid.Row="1" Grid.ColumnSpan="2" Name="MainFrame" NavigationUIVisibility="Hidden" Navigated="Frame_MainWindow_Navigated"/>
+
+            </Grid>
+        </ScrollViewer>
+    </Controls:TransitioningContentControl>
+</Controls:MetroWindow>

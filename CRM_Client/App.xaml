@@ -1,0 +1,107 @@
+﻿<Application x:Class="CRM_Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             StartupUri="View/MainWindow.xaml" DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Purple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="MinimalChartStyle" TargetType="chart:ChartBase">
+                <Setter Property="Width" Value="670"/>
+                <Setter Property="Height" Value="450"/>
+            </Style>
+
+            <LinearGradientBrush x:Key="Gradient_Lime">
+                <GradientStop Color="#A4C400" Offset="0"/>
+                <GradientStop Color="#C6E238" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Green">
+                <GradientStop Color="#60A917" Offset="0"/>
+                <GradientStop Color="#90D44B" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Emeralb">
+                <GradientStop Color="#008A00" Offset="0"/>
+                <GradientStop Color="#31C431" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Teal">
+                <GradientStop Color="#00ABA9" Offset="0"/>
+                <GradientStop Color="#35D5D5" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Cyan">
+                <GradientStop Color="#1BA1E2" Offset="0"/>
+                <GradientStop Color="#52BDF1" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Cobalt">
+                <GradientStop Color="#0050EF" Offset="0"/>
+                <GradientStop Color="#3E7CF7" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Indigo">
+                <GradientStop Color="#6A00FF" Offset="0"/>
+                <GradientStop Color="#8F40FF" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Violet">
+                <GradientStop Color="#AA00FF" Offset="0"/>
+                <GradientStop Color="#BE40FF" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Pink">
+                <GradientStop Color="#F472D0" Offset="0"/>
+                <GradientStop Color="#FA96DE" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Magenta">
+                <GradientStop Color="#D80073" Offset="0"/>
+                <GradientStop Color="#EC3B98" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Crimson">
+                <GradientStop Color="#A20025" Offset="0"/>
+                <GradientStop Color="#D13459" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Red">
+                <GradientStop Color="#E51400" Offset="0"/>
+                <GradientStop Color="#F24E3D" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Orange">
+                <GradientStop Color="#FA6800" Offset="0"/>
+                <GradientStop Color="#FD8E3F" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Amber">
+                <GradientStop Color="#F0A30A" Offset="0"/>
+                <GradientStop Color="#F8BC46" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Yellow">
+                <GradientStop Color="#E3C800" Offset="0"/>
+                <GradientStop Color="#F1DC3C" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Brown">
+                <GradientStop Color="#825A2C" Offset="0"/>
+                <GradientStop Color="#C19461" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Olive">
+                <GradientStop Color="#6D8764" Offset="0"/>
+                <GradientStop Color="#A7C39D" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Stell">
+                <GradientStop Color="#647687" Offset="0"/>
+                <GradientStop Color="#9DB0C3" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Mauve">
+                <GradientStop Color="#76708A" Offset="0"/>
+                <GradientStop Color="#AFA9C4" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Gradient_Taupe">
+                <GradientStop Color="#87794E" Offset="0"/>
+                <GradientStop Color="#C3B485" Offset="1"/>
+            </LinearGradientBrush>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
